@@ -8,6 +8,10 @@ public class Main {
 
         // Prepare to accept user input
         Scanner Keyboard = new Scanner(System.in);
+        ArrayList<Person> personList = new ArrayList<>();
+        ArrayList<Education> educationList = new ArrayList<>();
+        ArrayList<Experience> experienceList = new ArrayList<>();
+        ArrayList<Skill> skillList = new ArrayList<>();
 
         Person newPerson = new Person();
         Education newEducation;
@@ -18,11 +22,6 @@ public class Main {
         int counter=1;
         String userInput;
 
-
-        ArrayList<Person> personList = new ArrayList<>();
-        ArrayList<Education> educationList = new ArrayList<>();
-        ArrayList<Experience> experienceList = new ArrayList<>();
-        ArrayList<Skill> skillList = new ArrayList<>();
 
         // Adding personal info
         System.out.println("Enter first name  : ");
@@ -42,6 +41,7 @@ public class Main {
             System.out.println("Enter Degree (BS, MS, Phd,...: ");
             userInput=Keyboard.nextLine();
 
+            // If user hits enter without entering any degree, they are prompted again to enter a valid degree
             if (userInput.isEmpty()){
                 System.out.println("Enter a valid education: ");
                 answer="A";
@@ -117,6 +117,7 @@ public class Main {
 
         //Adding skills
         System.out.println("Enter skills (Up to 20 enteries accepted  : ");
+        counter=1;
         do {
             newSkill = new Skill();
             System.out.println("Enter Skill: ");
